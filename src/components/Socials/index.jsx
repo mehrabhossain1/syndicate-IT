@@ -1,6 +1,6 @@
 import "./Socials.css";
 import { socialHandles } from "../../data";
-import { cssPerfectShape } from "../../utils";
+import { convertHexToRgba, cssPerfectShape } from "../../utils";
 
 const Socials = () => {
   return (
@@ -11,7 +11,10 @@ const Socials = () => {
           key={index}
           target="_blank"
           className="icon"
-          style={{ ...cssPerfectShape(40, 40), background: "var(--primary)" }}
+          style={{
+            ...cssPerfectShape(40, 40),
+            background: convertHexToRgba("--primary", 0.2),
+          }}
         >
           <list.icon />
         </a>
