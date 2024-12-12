@@ -1,11 +1,12 @@
 import SyndicateItLogo from "../../components/SyndicateItLogo";
-import "./Navbar.css";
 import { navRoutes } from "../../data";
 import { Link } from "react-scroll";
 import Socials from "../../components/Socials";
 import { CgMenuRight } from "react-icons/cg";
 import Sidebar from "../../components/Sidebar";
 import { useState } from "react";
+
+import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
