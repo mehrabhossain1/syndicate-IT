@@ -13,6 +13,11 @@ const Navbar = () => {
   return (
     <>
       <Sidebar open={open} onClose={() => setOpen(!open)} />
+
+      {open && (
+        <div className="sidebar-overlay" onClick={() => setOpen(!open)} />
+      )}
+
       <nav id="navbar">
         <SyndicateItLogo />
         <div className="route-wrapper">
