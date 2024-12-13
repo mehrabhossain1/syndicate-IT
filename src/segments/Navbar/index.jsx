@@ -4,12 +4,29 @@ import { Link } from "react-scroll";
 import Socials from "../../components/Socials";
 import { CgMenuRight } from "react-icons/cg";
 import Sidebar from "../../components/Sidebar";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { convertHexToRgba } from "../../utils";
 
 import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [drop, setDrop] = useState(false);
+
+  const dropNavbar = () => {
+    if (window.scrollY > 200) {
+      setDrop(true);
+    } else {
+      setDrop(false);
+    }
+  };
+
+  useMemo(() => {
+    window.addEventListener("scroll", dropNavbar);
+    return () => window.removeEventListener("scroll", dropNavbar);
+  });
+
+  console.log("drop navbar", drop);
 
   return (
     <>
@@ -19,7 +36,11 @@ const Navbar = () => {
         <div className="sidebar-overlay" onClick={() => setOpen(!open)} />
       )}
 
-      <nav id="navbar">
+      <nav
+        id="navbar"
+        className={drop ? "blur drop" : ""}
+        style={{ background: convertHexToRgba("--bg-base", 0.8) }}
+      >
         <SyndicateItLogo />
         <div className="route-wrapper">
           {navRoutes.map((route, index) => (
