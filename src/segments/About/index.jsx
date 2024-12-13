@@ -25,7 +25,7 @@ const About = () => {
               </div>
 
               <div className="image-container">
-                <img src={VRIMage} alt="vision image" />
+                <img src={VRIMage} loading="lazy" alt="vision image" />
               </div>
             </div>
 
@@ -41,7 +41,7 @@ const About = () => {
               </div>
 
               <div className="image-container">
-                <img src={PersonImage} alt="vision image" />
+                <img src={PersonImage} loading="lazy" alt="vision image" />
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@ const About = () => {
                 style={{ background: convertHexToRgba("--bg-secondary", 0.3) }}
               >
                 <div className="icon">
-                  <img src={list.imageIcon} alt="icon" />
+                  <img src={list.imageIcon} loading="lazy" alt="icon" />
                 </div>
                 <h3 className="title">{list.title}</h3>
                 <p className="description">{list.description}</p>
