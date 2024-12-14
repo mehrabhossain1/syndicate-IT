@@ -1,3 +1,5 @@
+import { FaStar, FaRegStar } from "react-icons/fa6";
+
 export const cssPerfectShape = (width, height) => {
   return {
     width,
@@ -22,4 +24,24 @@ export const convertHexToRgba = (cssProperty, opacity) => {
   }
 
   return `rgb(${red}, ${green}, ${blue})`;
+};
+
+export const starDecoder = (rating) => {
+  const stars = [];
+
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      stars.push(FaStar);
+    } else {
+      stars.push(FaRegStar);
+    }
+  }
+
+  return (
+    <>
+      {stars.map((Star, index) => (
+        <Star key={index} />
+      ))}
+    </>
+  );
 };
