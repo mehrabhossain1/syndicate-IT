@@ -92,7 +92,6 @@ export const whyChooseUs = [
   },
 ];
 
-
 export const ourApproaches = [
   {
     title: "Client-Centered Collaboration",
@@ -200,19 +199,20 @@ export const contactInfo = [
   {
     title: "Email Us",
     description: "Fast and Reliable Support",
-    value: "mradinuba@gmail.com",
+    value: "mehrab.munna00@gmail.com",
     icon: MdOutlineAlternateEmail,
   },
   {
     title: "Our Address",
     description: "Come visit us in our office",
-    value: "First Avenue, Gwarinpa, Abuja Nigeria",
+    value:
+      "South Alekanda, Banglabazar, Word No: 14, BCC, Barishal, Bangladesh",
     icon: FaLocationCrosshairs,
   },
   {
     title: "Phone number",
     description: "Give Us a call",
-    value: "+234 814 912 1918",
+    value: "+880 1700 952084",
     icon: FiPhoneCall,
   },
 ];
