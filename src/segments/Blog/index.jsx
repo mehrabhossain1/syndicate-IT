@@ -1,10 +1,45 @@
 import { blogPost } from "../../data";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+import { useRef } from "react";
+
 import "./Blog.css";
 
 const Blog = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "20% bottom",
+            end: "bottom top",
+          },
+        })
+
+        .fromTo(
+          [
+            "#blog .section-header h3",
+            "#blog .section-header h2",
+            "#blog .blog-card",
+          ],
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.5 }
+        );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section id="blog">
+    <section id="blog" ref={containerRef}>
       <div className="container">
         <div className="section-header">
           <h3>Blog Post</h3>

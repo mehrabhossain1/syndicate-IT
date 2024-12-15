@@ -3,11 +3,47 @@ import Socials from "../../components/Socials";
 import { contactInfo, footer } from "../../data";
 import { Link } from "react-scroll";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+import { useRef } from "react";
+
 import "./Footer.css";
 
 const Footer = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "20% bottom",
+            end: "bottom top",
+          },
+        })
+
+        .fromTo(
+          [
+            "footer .newsletter p",
+            "footer .newsletter .subscribe",
+            "footer .newsletter h2",
+            "footer .box-wrapper .box",
+          ],
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.5 }
+        );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <footer>
+    <footer ref={containerRef}>
       <div className="container">
         <section className="newsletter">
           <h2>NEWSLETTER</h2>

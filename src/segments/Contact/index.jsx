@@ -30,12 +30,12 @@ const Contact = () => {
         .fromTo(
           "#contact .contact-info-wrapper .contact-info",
           { x: -50, opacity: 0 },
-          { x: 0, opacity: 1, stagger: 0.5 }
+          { x: 0, opacity: 1, stagger: 0.3 }
         )
         .fromTo(
           "#contact .socials .icon",
           { x: 50, opacity: 0 },
-          { x: 0, opacity: 1, stagger: 0.5 }
+          { x: 0, opacity: 1, stagger: 0.3 }
         )
 
         .fromTo(
