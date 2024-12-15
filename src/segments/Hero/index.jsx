@@ -4,10 +4,35 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 import { FaProjectDiagram } from "react-icons/fa";
 import heroImage from "../../assets/hero.png";
 import BoxAnimation from "../../assets/BoxAnimation";
+import { useEffect } from "react";
+
+import gsap from "gsap";
 
 import "./Hero.css";
 
 const Hero = () => {
+  useEffect(() => {
+    gsap
+      .timeline({ delay: 0.5 })
+      .fromTo(
+        "#hero .hero-subtitle",
+        { x: -20, opacity: 0 },
+        { x: 0, opacity: 1 }
+      )
+      .fromTo("#hero .hero-title", { y: 20, opacity: 0 }, { y: 0, opacity: 1 })
+      .fromTo("#hero .hero-image", { y: -20, opacity: 0 }, { y: 0, opacity: 1 })
+      .fromTo(
+        "#hero .hero-description",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1 }
+      )
+      .fromTo(
+        "#hero .buttons-wrapper",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1 }
+      );
+  });
+
   return (
     <section id="hero">
       <BoxAnimation />
