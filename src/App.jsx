@@ -1,5 +1,6 @@
 import About from "./segments/About";
 import Achievement from "./segments/Achievement";
+import Blog from "./segments/Blog";
 import Contact from "./segments/Contact";
 import Hero from "./segments/Hero";
 import Navbar from "./segments/Navbar";
@@ -20,6 +21,7 @@ function App() {
       <Portfolio />
       <Testimonials />
       <Contact />
+      <Blog />
     </>
   );
 }
