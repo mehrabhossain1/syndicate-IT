@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 import { useRef } from "react";
+
 import "./About.css";
 
 const About = () => {
@@ -37,7 +38,7 @@ const About = () => {
             "#about .contact-us",
           ],
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.5 }
+          { y: 0, opacity: 1, stagger: 0.3 }
         )
 
         .fromTo(
@@ -46,7 +47,7 @@ const About = () => {
             "#about .why-choose-us-container .why-choose-us",
           ],
           { x: 50, opacity: 0 },
-          { x: 0, opacity: 1, stagger: 0.5 }
+          { x: 0, opacity: 1, stagger: 0.3 }
         );
     },
     { scope: containerRef }

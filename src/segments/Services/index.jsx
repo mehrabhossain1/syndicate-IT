@@ -1,12 +1,49 @@
 import { Link } from "react-scroll";
 import { services } from "../../data";
 import { convertHexToRgba, cssPerfectShape } from "../../utils";
-import "./Services.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+import { useRef } from "react";
+
+import "./Services.css";
+
 const Services = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "20% bottom",
+            end: "bottom top",
+          },
+        })
+
+        .fromTo(
+          [
+            "#services .section-header h3",
+            "#services .section-header h2",
+            "#services .services .service",
+            "#services .spotlight",
+          ],
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.5 }
+        );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section id="services">
+    <section id="services" ref={containerRef}>
       <div className="spotlight" />
       <div className="container">
         <div className="section-header">
