@@ -47,7 +47,7 @@
   color: var(--primary);
 }
 
-#navbar .route:active {
+#navbar .route.active {
   color: var(--primary);
 }
 

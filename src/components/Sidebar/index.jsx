@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-scroll";
 import { navRoutes } from "../../data";
-import "./Sidebar.css";
 import { FaTimes } from "react-icons/fa";
 import { cssPerfectShape } from "../../utils";
+
+import "./Sidebar.css";
 
 const Sidebar = ({ open, onClose }) => {
   return (
