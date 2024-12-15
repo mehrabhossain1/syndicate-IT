@@ -2,6 +2,7 @@ import About from "./segments/About";
 import Achievement from "./segments/Achievement";
 import Blog from "./segments/Blog";
 import Contact from "./segments/Contact";
+import Footer from "./segments/Footer";
 import Hero from "./segments/Hero";
 import Navbar from "./segments/Navbar";
 import Portfolio from "./segments/Portfolio";
@@ -22,6 +23,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Blog />
+      <Footer />
     </>
   );
 }
